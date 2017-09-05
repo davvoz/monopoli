@@ -1,346 +1,135 @@
-//const tabellone = require('../src/models/caselle');
-const caselle = [
-  {
-      posizione : 1,
-      nome :"Vicolo Corto",
-      colore :"rosa",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 150
-  },
-  {
-      posizione : 2,
-      nome : "Probabilità1",
-      tipo : "probabilità"
-  },
-  {
-      posizione : 3,
-      nome :"Vicolo Stretto",
-      colore :"rosa",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 150
-  },
-  {
-      posizione : 4,
-      nome :"tassa patrimoniale",
-      tipo : "tassa",
-      valore : 500
-  },
-  {
-      posizione : 5,
-      nome :"Stazione Sud",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 480
-  },
-  {
-      posizione : 6,
-      nome :"Bastioni Gran Sasso",
-      tipo : "aquistabile",
-      colore :"blu",
-      proprietario : "nessuno",
-      valore : 250
-  },
-  {
-      posizione : 7,
-      nome :"Imprevisti1",
-      tipo : "imprevisti",
-  },
-  {
-      posizione : 8,
-      nome :"Viale Monterosa",
-      colore :"blu",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 250
-  },
-  {
-      posizione : 9,
-      nome :"Viale Vesuvio",
-      colore :"blu",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 300
-  },
-  {
-      posizione : 10,
-      nome :"Prigione/Transito",
-      tipo : "Prigione/Transito",
-      proprietario : "nessuno",
-  },
-  {
-      posizione : 11,
-      nome :"Via Accademia",
-      colore :"ocra",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 350 
-  },
-  {
-      posizione : 12,
-      nome :"Società Elettrica",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 375
-  },
-  {
-      posizione : 13,
-      nome :"Corso Ateneo",
-      colore :"ocra",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 350
-  },
-  {
-      posizione : 14,
-      nome :"Piazza Università",
-      colore :"ocra",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 400 
-  },
-  {
-      posizione : 15,
-      nome :"Stazione Ovest",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 480
-  },
-  {
-      posizione : 16,
-      nome :"Via Verdi",
-      colore :"marrone",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 450
-  },
-  {
-      posizione : 17,
-      nome :"Probabilità2",
-      tipo : "probabilità"
-  },
-  {
-      posizione : 18,
-      nome :"Corso Raffaello",
-      colore :"marrone",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 450
-  },
-  {
-      posizione : 19,
-      nome :"Piazza Dante",
-      colore :"marrone",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore :500
-  },
-  {
-      posizione : 20,
-      nome :"Posteggio gratuito",
-      tipo : "Posteggio gratuito"
-  },
-  {
-      posizione : 21,
-      nome :"Via Marco Polo",
-      colore :"rosso",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 550
-  },
-  {
-      posizione : 22,
-      nome :"Imprevisti2",
-      tipo : "imprevisti"
-  },
-  {
-      posizione : 23,
-      nome :"Corso Magellano",
-      colore :"rosso",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 550
-  },
-  {
-      posizione : 24,
-      nome :"Largo Colombo",
-      colore :"rosso",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 600
-  },
-  {
-      posizione : 25,
-      nome :"Stazione Nord",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 480
-  },
-  {
-      posizione : 26,
-      nome :"Viale Costantino",
-      colore :"giallo",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 650 
-  },
-  {
-      posizione : 27,
-      nome :"Viale Traiano ",
-      colore :"giallo",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 650
-  },
-  {
-      posizione : 28,
-      nome :"Società Acqua Potabile",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 375
-  },
-  {
-      posizione : 29,
-      nome :"Piazza Giulio Cesare",
-      colore :"giallo",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 700 
-  },
-  {
-      posizione : 30,
-      nome :"In prigione",
-      tipo : "in prigione"
-      
-  },
-  {
-      posizione : 31,
-      nome :"Via Roma",
-      colore :"verde",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 750
-  },
-  {
-      posizione : 32,
-      nome :"Corso Impero",
-      colore :"verde",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 750
-  },
-  {
-      posizione : 33,
-      nome :"Probabilità3",
-      tipo : "probabilità",
-
-  },
-  {
-      posizione : 34,
-      nome :"Largo Augusto",
-      colore :"verde",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 800
-  },
-  {
-      posizione : 35,
-      nome :"Stazione Est",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 480
-  },
-  {
-      posizione : 36,
-      nome :"Imprevisti3",
-      tipo : "imprevisti",
-      proprietario : "nessuno",
-
-  },
-  {
-      posizione : 37,
-      nome :"Viale dei Giardini",
-      colore : "viola",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 900
-  },
-  {
-      posizione : 38,
-      nome :"Tassa del lusso",
-      tipo : "Tassa del lusso",
-      proprietario : "nessuno",
-      valore : 250
-  },
-  {
-      posizione : 39,
-      nome :"Parco della Vittoria",
-      colore: "viola",
-      tipo : "aquistabile",
-      proprietario : "nessuno",
-      valore : 1000
-  },
-  {
-      posizione : 0,
-      nome :"Via",
-      tipo : "via"
-  }
-  
-]
+  //first relase
 module.exports = {
-  createPlayer( nome , eta) {
-    if( typeof nome === 'string' && typeof eta === 'number'){
-      return {
-        name : nome,
-        age : eta ,
-        asset : 20000 ,
-        position : 0,
-        state : 'in gioco' //in prigione //in bancarotta
-      }
-    }
-    else {
-      return{
-        message : 'Parameters are not valid'
-      }
-    }
-  },
   
-  budgetControl(player){
-    if(typeof player.name  === 'string' && 
-       typeof player.age   === 'number' && 
-       typeof player.asset === 'number' && 
-       typeof player.state === 'string')
-      {
-        if(player.asset <= 0){
-        return  { message : 'in bancarotta'}
-      }else{
-        return  { message : 'in gioco'}
-      }
-    }else{
-      return { message : 'Parameters are not valid'}
-    }
-  },
-  tipoBoxControl(number){ 
-    return caselle[number].tipo;
-  },
-  dubleRollControl(){
-        dado1 = Math.floor((Math.random() * 6) + 1) ;
-        dado2 = Math.floor((Math.random() * 6) + 1) ;
-        if(dado1 === dado2){
-            return { value : dado1+dado2 , message:"Doppio turno" , content : { first : dado1,second : dado2 } }
+  doubleRoll(){
+       let dado1 = Math.floor((Math.random() * 6) + 1) ;
+       let dado2 = Math.floor((Math.random() * 6) + 1) ;
+        if( dado1 === dado2 ){
+            return { value : dado1 + dado2 , message:"Doppio turno" , content : { first : dado1 , second : dado2 } }
         }else{
-            return { value : dado1+dado2 , message:"Fermati" , content : { first : dado1,second : dado2 }}
+            return { value : dado1 + dado2 , message:"Fermati" , content : { first : dado1 , second : dado2 } }
         }
   },
-  dealControl(number){
-    if(caselle[number].tipo === 'aquistabile' && caselle[number].proprietario === 'nessuno'){
-        return  {messsage : 'true' };
-    }else{
-        return {message : 'false'}
-    }
+ 
 
-  }
+
+  randomlyStart( players ){
+     if(typeof players === 'object' && players.length >= 2 && players.length <= 6){//+ di 2 players e - di 7
+         let wrong = false;
+        for(let i = 0; i < players.length;i++){
+            if( typeof players[i].index === 'number' &&  typeof players[i].position === 'number' &&  typeof players[i].name === 'string'){
+                wrong = false;
+            }else{
+                wrong = true;
+                return { error : "Parameter not valid" }
+            }
+        }
+        if(!wrong){
+            for ( let i = players.length - 1 ; i > 0 ; i-- ) {
+                    let j = Math.floor(Math.random() * (i + 1));
+                    let temp = players[i];
+                    players[i] = players[j];
+                    players[j] = temp;
+            };
+            for( let i = 0 ; i < players.length ; i++ ){
+                players[i].index = i ;
+            }
+                return players
+            }
+        }else{
+             return { error : "Parameter not valid" }
+        }
+},
+  positioning( initialPosition , roll ){
+      if( typeof initialPosition === 'number' && typeof roll === 'number' ){
+          return initialPosition + roll >= 40 ? initialPosition + roll - 40  : initialPosition + roll     
+    }else{
+        return { error : 'Parameter not valid' }
+    }
+  },
+  round(player,consecutive){
+    if(!player.error){
+        player.predentCell = player.position;
+        let rollObject = this.doubleRoll();
+        player.lastRoll = rollObject.value;
+        let position =  this.positioning( player.position , player.lastRoll ) ;
+        if(this.isEqualDice(rollObject.content.first,rollObject.content.second)){
+        switch(consecutive){
+            case 0: 
+                this.updatePlayer(position,player);
+                this.round(player,1)
+            break;
+            case 1:
+                this.updatePlayer(position,player);
+                this.round(player,2)
+            break;
+            case 2:
+                this.updatePlayer(30,player);
+            break;
+        }
+        }else{
+            this.updatePlayer(position,player);
+        }
+        
+
+        return player
+    }else{
+        return  { error : player.error }
+    }
+    },
+
+    //second relase
+
+    isGo( posStart , posEnd ){
+        if( typeof posStart === 'number' && typeof posEnd === 'number'  ) {
+             return posStart > posEnd ? true : false
+        }else{
+            return { error : 'Parameter not valid' }
+        }
+    },
+    isIncomeTax(player){
+        if(!player.error){
+            if( player.position === 4 ){
+                 player.balance =  (player.balance * 0.2 ) > 200 ? player.balance - 200 : player.balance-player.balance * 0.2 ;
+                 player.incomeTax = true
+                 return { message: true , content:player.balance}
+             }else{
+                 player.incomeTax = false
+                 return { message: false , content:player.balance}
+            }
+        }else{
+            return { error : 'Parameter not valid' }
+        }
+    },
+    isGoToJail(player){
+        if(!player.error){
+            if( player.position === 30 ){
+                player.position = 10;
+                player.jail = true
+                 return { message: true , content :  player.position} 
+            }else{
+                player.jail = false
+                return { message: false , content :  player.position} 
+            }
+        }else{
+            return { error : 'Parameter not valid' }
+        }
+    },
+    //Optional
+    isEqualDice(d1,d2){
+        return d1 === d2 ? true : false ;
+    },
+    updatePlayer( position , player){
+       
+        player.balance = this.isGo( player.position , position) ? player.balance + 200 : player.balance;
+        player.position = position;
+        this.isIncomeTax(player);
+        this.isGoToJail(player);
+        return player
+    }
+  
+
 }
+
 
   
