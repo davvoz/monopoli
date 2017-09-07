@@ -10,14 +10,20 @@ module.exports = {
             return { value : dado1 + dado2 , message:"Fermati" , content : { first : dado1 , second : dado2 } }
         }
   },
- 
+  isValidPLayer(player){
+    if(typeof player.index === 'number' &&  typeof player.position === 'number' &&  typeof player.name === 'string' && typeof player.balance === 'number'  ){
+      return true
+    }else{
+        return false
+    }
+  },
 
 
   randomlyStart( players ){
      if(typeof players === 'object' && players.length >= 2 && players.length <= 6){//+ di 2 players e - di 7
          let wrong = false;
         for(let i = 0; i < players.length;i++){
-            if( typeof players[i].index === 'number' &&  typeof players[i].position === 'number' &&  typeof players[i].name === 'string'){
+            if( typeof players[i].index === 'number' &&  typeof players[i].position === 'number' &&  typeof players[i].name === 'string' && typeof players[i].balance === 'number' ){
                 wrong = false;
             }else{
                 wrong = true;
@@ -48,7 +54,7 @@ module.exports = {
     }
   },
   round(player,consecutive){
-    if(!player.error){
+    if(typeof player.index === 'number' &&  typeof player.position === 'number' &&  typeof player.name === 'string' && typeof player.balance === 'number'  && typeof consecutive === 'number' && consecutive < 3 && consecutive >= 0){
         player.predentCell = player.position;
         let rollObject = this.doubleRoll();
         player.lastRoll = rollObject.value;
@@ -88,7 +94,7 @@ module.exports = {
         }
     },
     isIncomeTax(player){
-        if(!player.error){
+        if(typeof player.index === 'number' &&  typeof player.position === 'number' &&  typeof player.name === 'string' && typeof player.balance === 'number' ){
             if( player.position === 4 ){
                  player.balance =  (player.balance * 0.2 ) > 200 ? player.balance - 200 : player.balance-player.balance * 0.2 ;
                  player.incomeTax = true
@@ -102,7 +108,7 @@ module.exports = {
         }
     },
     isGoToJail(player){
-        if(!player.error){
+        if(typeof player.index === 'number' &&  typeof player.position === 'number' &&  typeof player.name === 'string' && typeof player.balance === 'number' ){
             if( player.position === 30 ){
                 player.position = 10;
                 player.jail = true
@@ -117,16 +123,26 @@ module.exports = {
     },
     //Optional
     isEqualDice(d1,d2){
-        return d1 === d2 ? true : false ;
+        if(typeof d1 === 'number' && typeof d2 === 'number'){
+        return d1 === d2 ? true : false ;}
+        else{
+            return { error:'Parameter not valid'}
+        }
     },
     updatePlayer( position , player){
-       
+       if(typeof position === 'number' && typeof player.index === 'number' &&  typeof player.position === 'number' &&  typeof player.name === 'string' && typeof player.balance === 'number' ){
         player.balance = this.isGo( player.position , position) ? player.balance + 200 : player.balance;
         player.position = position;
         this.isIncomeTax(player);
         this.isGoToJail(player);
-        return player
-    }
+        return player}
+        else{
+            return { error:'Parameter not valid'}
+        }
+
+    },
+    
+
   
 
 }
